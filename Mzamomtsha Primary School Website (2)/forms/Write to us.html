@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Write to us!</title>
+<link href="css/style.css" rel="stylesheet"> <link rel="stylesheet" href="styles.css">
+<script src="onsubmit.js"></script>
+</head>
+<section class="hero-section">
+    <div id="navbar">
+        <a href="#"><img src="logo1.png" style="width: 40px;height: 40px";></a>
+        <a href="index.html">Home</a>
+        <a href="#history">About Us</a>
+        <a href="#schoolProject">Events</a>
+        <a href="#footerDiv">Contacts</a>
+        <a href = "form.html">Form</a>
+        <a href="game.html">Game</a>
+        <meta name="theme-color" content="#84db94">
+<body>
+<div class="container">
+<div class="main">
+<form action="#" method="post" onsubmit="return ValidationEvent()">
+<h2>Write us a letter or attach one</h2>
+<label>Name :</label>
+<input id="name" name="name" placeholder="Name" type="text" required>
+<label>Email :</label>
+<input id="email" name="email" placeholder="Valid Email" type="text"  required>
+<label>Gender :</label>
+<input id="male" name="gender" type="radio" value="Male">
+<label>Male</label>
+<input id="female" name="gender" type="radio" value="Female">
+<label>Female</label>
+<br>
+<label>Write to us. :</label>
+<input id="Letter" name="Letter" placeholder="Your letter here" type="text">
+<!-- attach user letter-->
+<label>Attach your letter</label>
+<input type="file" id="input-file">
+<!--ends here-->
+<br>
+<input type="submit" value="Submit">
+
+</form>
+</div>
+</div>
+<script>
+    // fecth user only
+    'use strict';
+    // using asynchorous
+    (async (e) => {
+    let url = 'https://api.github.com/repos/json.js/en.javascript.info/commits';
+    let response = await fetch(url);
+     // read response body and parse as JSON
+    let commits = await response.json();
+    // if a commit is found complete search 
+    alert(commits[0].author.login);
+    })()
+    </script>
+</body>
+</html>
